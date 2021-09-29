@@ -6,16 +6,17 @@ import HoverCounter2 from './components/HoverCounter2';
 function App() {
   return (
     <div className="App">
-      <Counter
-        render={(count, incrementCount) => (
+      <Counter>
+        {(count, incrementCount) => (
           <ClickCounter2 count={count} incrementCount={incrementCount} />
         )}
-      />
-      <Counter
-        render={(count, incrementCount) => (
+        {/* anything between component tags will be passed as children props */}
+      </Counter>
+      <Counter>
+        {(count, incrementCount) => (
           <HoverCounter2 count={count} incrementCount={incrementCount} />
         )}
-      />
+      </Counter>
 
     </div>
   );
